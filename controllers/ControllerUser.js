@@ -2,6 +2,11 @@ module.exports = {
 
     registration: (req, res) =>{
 
-        res.send('Teste');
+        res.render('userRegister.ejs');
+    },
+
+    processRegistration: (req, res) =>{
+
+        res.send('Imagem enviada com sucesso');
     } 
 }
