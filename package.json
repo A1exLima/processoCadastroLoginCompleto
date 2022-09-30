@@ -14,6 +14,9 @@
   "author": "Alex Lima",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "json": "^11.0.0",
     "nodemon": "^2.0.20"
   }
 }
