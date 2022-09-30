@@ -1,0 +1,19 @@
+{
+  "name": "processologincompleto",
+  "version": "1.0.0",
+  "description": "Estudo do processo de cadastro e login usuário",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon --ignore database/* app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cadastro",
+    "login"
+  ],
+  "author": "Alex Lima",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
