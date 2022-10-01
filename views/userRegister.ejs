@@ -14,7 +14,17 @@
                 <section>
 
                     <h1>CADASTRO USUÁRIO</h1>
+
+                    <% if(uploadImg == false ){ %>
     
+                        <ul class="error-msg">
+                            <li> Imagem não carregada </li>
+                        </ul>
+    
+                    <% } %>
+
+                    <br>
+                    
                     <% if(typeof erros !== "undefined"){ %>
     
                         <ul class="error-msg">
@@ -30,14 +40,14 @@
     
                     <!-- Warning: Atributo Enctype para processamento de arquivo-->
                     <form action="/registration" method="post" enctype="multipart/form-data">
-                        <label for="nome">Nome:</label>
-                        <input type="text" name="nome" id="nome" value="<%=locals.old && old.nome%>">
+                        <label for="name">Nome:</label>
+                        <input type="text" name="name" id="name" value="<%=locals.old && old.name%>">
     
                         <label for="email">E-mail:</label>
                         <input type="email" name="email" id="email" value="<%=locals.old && old.email%>">
     
-                        <label for="senha">Senha:</label>
-                        <input type="password" name="senha" id="senha">
+                        <label for="password">Senha:</label>
+                        <input type="password" name="password" id="password">
                         
                         
                         <label class="inputFile" form="imageUser">
@@ -48,7 +58,7 @@
                         <button type="submit">CADASTRAR</button>
     
                     </form>
-    
+
                 </section>
 
             </header>

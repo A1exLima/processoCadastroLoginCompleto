@@ -24,8 +24,7 @@ section{
     list-style-type: none;
     background-color: rgba(255, 3, 3, 0.276);
     width: 300px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    border-radius: 5px;
     font-size: 0.8rem;
     color: rgba(41, 41, 43, 0.722);
 }
@@ -42,7 +41,7 @@ p{
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     font-size: 0.8rem;
-    color: rgba(41, 41, 43, 0.722);
+    color: rgba(41, 42, 43, 0.722);
 }
 
 h1 {
@@ -50,6 +49,7 @@ h1 {
     margin-left: 50px;
     margin-bottom: 5px;
     align-items: center;
+    color: rgba(13, 97, 146, 0.861)
 }
 
 form {
@@ -62,12 +62,13 @@ form {
 
 label {
     font-weight: 500;
+    color: rgba(13, 97, 146, 0.861)
 }
 
 input {
     margin-bottom: 10px;
     height: 30px;
-    border: 1px solid rgb(140, 140, 140);
+    border: 1px solid rgba(18, 121, 195, 0.722);
     padding-left: 10px;
     border-radius: 5px;
 
@@ -76,8 +77,8 @@ button{
     margin-top: 30px;
     height: 40px;
     color: #f1f1f1;
-    background-color: #333;
-    border: 1px solid rgb(140, 140, 140);
+    background-color:rgba(18, 121, 195, 0.722);
+    border: 1px solid rgba(18, 121, 195, 0.722);
     border-radius: 5px;
     font-weight: 600;
     font-size: 1rem;
@@ -106,9 +107,9 @@ button{
     height: 2.45rem;
     padding: .5rem 1rem;
     line-height: 1.5;
-    color: #444;
-    background-color: #f1f1f1;
-    border: 1px solid #ddd;
+    color: rgba(13, 97, 146, 0.861);
+    background-color: #f1f1f17b;
+    border: 1px solid rgba(18, 121, 195, 0.722);
     border-radius: 3px;
     box-shadow: inset 0 .5px .5px rgba(0, 0, 0, .05);
     user-select: none;
@@ -126,8 +127,8 @@ button{
     padding: .5rem 1rem;
     line-height: 1.5;
     color: #f1f1f1;
-    background-color: rgb(69, 69, 69);
-    border: 1px solid rgb(69, 69, 69);
+    background-color: rgba(18, 121, 195, 0.722);
+    border: 1px solid rgba(18, 121, 195, 0.722);
     border-radius: 0 3px 3px 0;
   }
   
