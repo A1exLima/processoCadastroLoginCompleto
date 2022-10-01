@@ -14,46 +14,38 @@
                 <section>
 
                     <h1>CADASTRO USUÁRIO</h1>
-
-                    <% if(uploadImg == false ){ %>
-    
-                        <ul class="error-msg">
-                            <li> Imagem não carregada </li>
-                        </ul>
-    
-                    <% } %>
-
-                    <br>
-                    
-                    <% if(typeof erros !== "undefined"){ %>
-    
-                        <ul class="error-msg">
-                            <% for(let erro in erros) { %>
-                                <li> 
-                                     
-                                    <%= erros[erro].msg %> 
-                                </li>
-                            <% } %>
-                        </ul>
-    
-                    <% } %> 
     
                     <!-- Warning: Atributo Enctype para processamento de arquivo-->
                     <form action="/registration" method="post" enctype="multipart/form-data">
                         <label for="name">Nome:</label>
-                        <input type="text" name="name" id="name" value="<%=locals.old && old.name%>">
+                        <input type="text" name="name" id="name" value="<%= locals.old ? old.name : null %>">
+
+                        <% if(locals.erros && erros.name) { %>
+                            <div class="msg-error"> <%=erros.name.msg %></div>
+                        <% } %>
     
                         <label for="email">E-mail:</label>
-                        <input type="email" name="email" id="email" value="<%=locals.old && old.email%>">
+                        <input type="text" name="email" id="email" value="<%=locals.old ? old.email : null %>">
+
+                        <% if(locals.erros && erros.email) { %>
+                            <div class="msg-error"> <%=erros.email.msg %></div>
+                        <% } %>
     
                         <label for="password">Senha:</label>
                         <input type="password" name="password" id="password">
                         
+                        <% if(locals.erros && erros.password) { %>
+                            <div class="msg-error"> <%=erros.password.msg %></div>
+                        <% } %>
                         
                         <label class="inputFile" form="imageUser">
                             <span class="inputFile-custom"></span>
                             <input type="file" id="imageUser" name="imageUser">
                         </label>
+                        <br>	
+                        <% if(uploadImg == false ){ %>
+                            <div class="msg-error"> A imagem deve ser carregada </div> 
+                        <% } %>
     
                         <button type="submit">CADASTRAR</button>
     
