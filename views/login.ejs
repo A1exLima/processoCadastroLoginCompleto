@@ -22,8 +22,13 @@
                         <% if(locals.erros && erros.password) { %>
                             <div class="msg-error"> <%=erros.password.msg %></div>
                         <% } %>
+                        
+                        <div class="remember-box">
+                            <input class="remember-check" type="checkbox" name="remember" id="remember">
+                            <label class="remember" for="remember">Lembrar Usuário</label>
+                        </div>
 
-                        <button type="submit">Login</button>
+                        <button type="submit">LOGIN</button>
 
                     </form>
 
