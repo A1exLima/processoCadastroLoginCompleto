@@ -24,6 +24,14 @@ module.exports = {
 
         } else{
 
+            //Verificacao do email se ja existe no banco de dados se sim, bloqueia o registro e informa ao usuário que ja foi registrado o email e pede para inserir um email diferente.
+            let UserExists = User.findUsersByField('email', req.body.email);
+
+            if(UserExists){
+                return res.render('userRegister.ejs', { erros: {email: {msg: "Esse e-mail já está registrado, insira um novo e-mail"}}, old: req.body});
+
+            }
+
             // Concatena informacoes do form com password, como nao pode ter dois paramentos iguais, o sistema rescreve esse parametro pegando como valido o ultimo parametro e executa um hash no password.
             let UserToCreate = {
                 ...req.body,
