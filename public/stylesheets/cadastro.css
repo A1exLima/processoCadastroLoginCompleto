@@ -13,6 +13,7 @@ section{
     display: flex;
     align-items: center;
     flex-direction: column;
+
 }
 
 
@@ -40,7 +41,6 @@ p{
 
 h1 {
     margin-top: 100px;
-    margin-left: 50px;
     margin-bottom: 5px;
     align-items: center;
     color: rgba(13, 97, 146, 0.861)
@@ -48,7 +48,7 @@ h1 {
 
 form {
     margin-top: 20px;
-    margin-left: 50px;
+
     display: flex;
     flex-direction: column;
     width: 300px;

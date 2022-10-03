@@ -4,16 +4,16 @@ module.exports = {
 
     registration: (req, res) =>{
 
-        res.render('userRegister.ejs', {uploadImg: true});
+        res.render('userRegister.ejs');
     },
 
     processRegistration: (req, res) =>{
 
         let erros = validationResult(req);
             
-        if(!erros.isEmpty() || req.file == undefined){
+        if(!erros.isEmpty()){
 
-            return res.render('userRegister.ejs', { erros: erros.mapped(), old: req.body, uploadImg: false});
+            return res.render('userRegister.ejs', { erros: erros.mapped(), old: req.body});
 
         } else{
 

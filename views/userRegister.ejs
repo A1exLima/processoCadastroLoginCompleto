@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
+
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,50 +12,48 @@
 
     <body>
         <main>
-            <header>
-                <section>
+            <article>
 
-                    <h1>CADASTRO USUÁRIO</h1>
-    
-                    <!-- Warning: Atributo Enctype para processamento de arquivo-->
-                    <form action="/registration" method="post" enctype="multipart/form-data">
-                        <label for="name">Nome:</label>
-                        <input type="text" name="name" id="name" value="<%= locals.old ? old.name : null %>">
+                <h1>CADASTRO USUÁRIO</h1>
 
-                        <% if(locals.erros && erros.name) { %>
-                            <div class="msg-error"> <%=erros.name.msg %></div>
-                        <% } %>
-    
-                        <label for="email">E-mail:</label>
-                        <input type="text" name="email" id="email" value="<%=locals.old ? old.email : null %>">
+                <!-- Warning: Atributo Enctype para processamento de arquivo-->
+                <form action="/registration" method="post" enctype="multipart/form-data">
+                    
+                    <label for="name">Nome:</label>
+                    <input type="text" name="name" id="name" value="<%= locals.old ? old.name : null %>">
 
-                        <% if(locals.erros && erros.email) { %>
-                            <div class="msg-error"> <%=erros.email.msg %></div>
-                        <% } %>
-    
-                        <label for="password">Senha:</label>
-                        <input type="password" name="password" id="password">
-                        
-                        <% if(locals.erros && erros.password) { %>
-                            <div class="msg-error"> <%=erros.password.msg %></div>
-                        <% } %>
-                        
-                        <label class="inputFile" form="imageUser">
-                            <span class="inputFile-custom"></span>
-                            <input type="file" id="imageUser" name="imageUser">
-                        </label>
-                        <br>	
-                        <% if(uploadImg == false ){ %>
-                            <div class="msg-error"> A imagem deve ser carregada </div> 
-                        <% } %>
-    
-                        <button type="submit">CADASTRAR</button>
-    
-                    </form>
+                    <% if(locals.erros && erros.name) { %>
+                        <div class="msg-error"> <%=erros.name.msg %></div>
+                    <% } %>
 
-                </section>
+                    <label for="email">E-mail:</label>
+                    <input type="text" name="email" id="email" value="<%=locals.old ? old.email : null %>">
 
-            </header>
+                    <% if(locals.erros && erros.email) { %>
+                        <div class="msg-error"> <%=erros.email.msg %></div>
+                    <% } %>
+
+                    <label for="password">Senha:</label>
+                    <input type="password" name="password" id="password">
+                    
+                    <% if(locals.erros && erros.password) { %>
+                        <div class="msg-error"> <%=erros.password.msg %></div>
+                    <% } %>
+                    
+                    <label class="inputFile" form= "imageUser">
+                        <span class="inputFile-custom"></span>
+                        <input type="file" id="imageUser" name="imageUser">
+                    </label>
+                    <br>	
+                    <% if(locals.erros && erros.imageUser) { %>
+                        <div class="msg-error"> <%=erros.imageUser.msg %></div>
+                    <% } %>
+
+                    <button type="submit">CADASTRAR</button>
+
+                </form>
+
+            </article>
         </main>
     <body>
 
