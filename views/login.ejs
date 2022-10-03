@@ -1,0 +1,36 @@
+<%- include('./partials/head') %>
+                
+    <%- include('./partials/header') %>
+                
+                <article>
+
+                    <h1>LOGIN DE USUÁRIO</h1>
+
+                    <!-- Warning: Atributo Enctype para processamento de arquivo-->
+                    <form action="/login" method="post" enctype="multipart/form-data">
+
+                        <label for="email">E-mail:</label>
+                        <input type="text" name="email" id="email" value="<%=locals.old ? old.email : null %>">
+
+                        <% if(locals.erros && erros.email) { %>
+                            <div class="msg-error"> <%=erros.email.msg %></div>
+                        <% } %>
+
+                        <label for="password">Senha:</label>
+                        <input type="password" name="password" id="password">
+                        
+                        <% if(locals.erros && erros.password) { %>
+                            <div class="msg-error"> <%=erros.password.msg %></div>
+                        <% } %>
+
+                        <button type="submit">Login</button>
+
+                    </form>
+
+                </article>
+        
+            </main>
+    
+        <body>
+
+</html>

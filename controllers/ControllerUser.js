@@ -2,7 +2,7 @@ const { validationResult } = require('express-validator');
 
 module.exports = {
     
-    home: (req, res) => {
+    home: (req, res) => { 
         res.send('Página Home TESTE');
     },
 
@@ -26,6 +26,10 @@ module.exports = {
     },
 
     login: (req, res) => {
-        res.send('Login TESTE');
+        res.render('login.ejs');
+    },
+
+    processlogin: (req, res) => {
+        res.send('FORM LOGIN')
     }
 }

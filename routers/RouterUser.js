@@ -56,6 +56,8 @@ router.get('/registration', ControllerUser.registration);
 router.post('/registration', upload.single('imageUser') , validations , ControllerUser.processRegistration);
 
 router.get('/login', ControllerUser.login);
+
+router.post('/login', ControllerUser.processlogin);
 //---------------------------------------------------------
 
 module.exports = router;
