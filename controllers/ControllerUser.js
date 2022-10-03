@@ -1,9 +1,10 @@
 const { validationResult } = require('express-validator');
+const User = require('../models/User');
 
 module.exports = {
     
     home: (req, res) => { 
-        res.send('Página Home TESTE');
+        res.render('home.ejs');
     },
 
     registration: (req, res) =>{
@@ -21,7 +22,10 @@ module.exports = {
 
         } else{
 
-            res.send("CADASTRO EFETUADO COM SUCESSO");
+            //Funcao Model para Salvar usuário no banco de dados
+            User.create(req.body);
+
+            res.render("confRegister.ejs");
         }    
     },
 

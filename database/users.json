@@ -1,0 +1,54 @@
+[
+ {
+  "id": 1,
+  "fullName": "Alex da Silva Lima",
+  "email": "alxsl@me.com",
+  "password": "123456",
+  "country": "Brasil",
+  "avatar": "default.png"
+ },
+ {
+  "id": 2,
+  "fullName": "Andressa da Silva Lima",
+  "email": "adsl@me.com",
+  "password": "654321",
+  "country": "Brasil",
+  "avatar": "default.png"
+ },
+ {
+  "id": 3,
+  "fullName": "Andressa da Silva Lima",
+  "email": "adsl@me.com",
+  "password": "654321",
+  "country": "Brasil",
+  "avatar": "default.png"
+ },
+ {
+  "id": 4,
+  "fullName": "Andressa da Silva Lima",
+  "email": "adsl@me.com",
+  "password": "654321",
+  "country": "Brasil",
+  "avatar": "default.png"
+ },
+ {
+  "id": 5,
+  "fullName": "Andressa da Silva Lima",
+  "email": "adsl@me.com",
+  "password": "654321",
+  "country": "Brasil",
+  "avatar": "default.png"
+ },
+ {
+  "id": 6,
+  "name": "João de Paula",
+  "email": "joao@me.com",
+  "password": "dasdas432534"
+ },
+ {
+  "id": 7,
+  "name": "Maria Fernandes",
+  "email": "maria@me.com",
+  "password": "fdsafsd34534"
+ }
+]
