@@ -47,12 +47,15 @@ const validations = [
 ];
     
 //---------------------------------------------------------
-
 const ControllerUser = require('../controllers/ControllerUser');
+
+router.get("/", ControllerUser.home);
+
 router.get('/registration', ControllerUser.registration);
 
 router.post('/registration', upload.single('imageUser') , validations , ControllerUser.processRegistration);
 
+router.get('/login', ControllerUser.login);
 //---------------------------------------------------------
 
 module.exports = router;

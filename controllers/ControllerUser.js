@@ -1,6 +1,10 @@
 const { validationResult } = require('express-validator');
 
 module.exports = {
+    
+    home: (req, res) => {
+        res.send('Página Home TESTE');
+    },
 
     registration: (req, res) =>{
 
@@ -19,5 +23,9 @@ module.exports = {
 
             res.send("CADASTRO EFETUADO COM SUCESSO");
         }    
-    } 
+    },
+
+    login: (req, res) => {
+        res.send('Login TESTE');
+    }
 }

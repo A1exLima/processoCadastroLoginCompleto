@@ -1,60 +1,52 @@
-<!DOCTYPE html>
+<%- include('./partials/head') %>
+                
+    <%- include('./partials/header') %>
+                
+                <article>
 
-<html lang="pt-br">
+                    <h1>REGISTRO DE USUÁRIO</h1>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/stylesheets/cadastro.css">
-        <title>Cadastro e Login</title>
-    </head>
+                    <!-- Warning: Atributo Enctype para processamento de arquivo-->
+                    <form action="/registration" method="post" enctype="multipart/form-data">
+                        
+                        <label for="name">Nome:</label>
+                        <input type="text" name="name" id="name" value="<%= locals.old ? old.name : null %>">
 
-    <body>
-        <main>
-            <article>
+                        <% if(locals.erros && erros.name) { %>
+                            <div class="msg-error"> <%=erros.name.msg %></div>
+                        <% } %>
 
-                <h1>CADASTRO USUÁRIO</h1>
+                        <label for="email">E-mail:</label>
+                        <input type="text" name="email" id="email" value="<%=locals.old ? old.email : null %>">
 
-                <!-- Warning: Atributo Enctype para processamento de arquivo-->
-                <form action="/registration" method="post" enctype="multipart/form-data">
-                    
-                    <label for="name">Nome:</label>
-                    <input type="text" name="name" id="name" value="<%= locals.old ? old.name : null %>">
+                        <% if(locals.erros && erros.email) { %>
+                            <div class="msg-error"> <%=erros.email.msg %></div>
+                        <% } %>
 
-                    <% if(locals.erros && erros.name) { %>
-                        <div class="msg-error"> <%=erros.name.msg %></div>
-                    <% } %>
+                        <label for="password">Senha:</label>
+                        <input type="password" name="password" id="password">
+                        
+                        <% if(locals.erros && erros.password) { %>
+                            <div class="msg-error"> <%=erros.password.msg %></div>
+                        <% } %>
+                        
+                        <label class="inputFile" form= "imageUser">
+                            <span class="inputFile-custom"></span>
+                            <input type="file" id="imageUser" name="imageUser">
+                        </label>
+                        <br>	
+                        <% if(locals.erros && erros.imageUser) { %>
+                            <div class="msg-error"> <%=erros.imageUser.msg %></div>
+                        <% } %>
 
-                    <label for="email">E-mail:</label>
-                    <input type="text" name="email" id="email" value="<%=locals.old ? old.email : null %>">
+                        <button type="submit">CADASTRAR</button>
 
-                    <% if(locals.erros && erros.email) { %>
-                        <div class="msg-error"> <%=erros.email.msg %></div>
-                    <% } %>
+                    </form>
 
-                    <label for="password">Senha:</label>
-                    <input type="password" name="password" id="password">
-                    
-                    <% if(locals.erros && erros.password) { %>
-                        <div class="msg-error"> <%=erros.password.msg %></div>
-                    <% } %>
-                    
-                    <label class="inputFile" form= "imageUser">
-                        <span class="inputFile-custom"></span>
-                        <input type="file" id="imageUser" name="imageUser">
-                    </label>
-                    <br>	
-                    <% if(locals.erros && erros.imageUser) { %>
-                        <div class="msg-error"> <%=erros.imageUser.msg %></div>
-                    <% } %>
-
-                    <button type="submit">CADASTRAR</button>
-
-                </form>
-
-            </article>
-        </main>
-    <body>
+                </article>
+        
+            </main>
+    
+        <body>
 
 </html>
