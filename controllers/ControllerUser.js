@@ -1,5 +1,7 @@
 const { validationResult } = require('express-validator');
 const User = require('../models/User');
+const bcrypt = require('bcrypt');
+const path = require("path");
 
 module.exports = {
     
@@ -22,10 +24,20 @@ module.exports = {
 
         } else{
 
-            //Funcao Model para Salvar usuário no banco de dados
-            User.create(req.body);
+            // Concatena informacoes do form com password, como nao pode ter dois paramentos iguais, o sistema rescreve esse parametro pegando como valido o ultimo parametro e executa um hash no password.
+            let UserToCreate = {
+                ...req.body,
+                password: bcrypt.hashSync(req.body.password, 10),
+                avatar: req.file.filename
+            }
 
-            res.render("confRegister.ejs");
+            //Funcao Model para Salvar usuário no banco de dados
+            User.create(UserToCreate);
+            
+            //Caminho da imagem do usuário salvo
+            let pathImgUser = path.join("images","imageUser", req.file.filename);
+
+            res.render("confRegister.ejs", { imgUser: pathImgUser});
         }    
     },
 

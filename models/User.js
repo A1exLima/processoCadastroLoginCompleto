@@ -5,14 +5,20 @@ const fileName = path.join("database",'users.json');
 
 const User = {
 
+    // BUSCAR NA BASE DE DADOS TODOS OS USUÁRIOS
+    getUsers: function () {
+
+        return JSON.parse(fs.readFileSync(fileName, "utf-8"));
+    },
+
     generateId: function(){
         let allUsers = this.getUsers();
         let lastUser = allUsers.pop();
-
+        
         return lastUser ? lastUser.id + 1 : 1;  
     },
 
-    // 1- SALVAR O USUÁRIO NA BASE DE DADOS
+    // SALVAR O USUÁRIO NA BASE DE DADOS
     create: function(userData) {
         
         // Salva os usuários do banco de dados na variavel
@@ -31,13 +37,7 @@ const User = {
         fs.writeFileSync(fileName, JSON.stringify(allUsers, null," "));
         return newUser;
     },
-
-    // 2- BUSCAR NA BASE DE DADOS TODOS OS USUÁRIOS
-    getUsers: function () {
-
-        return JSON.parse(fs.readFileSync(fileName, "utf-8"));
-    },
-    // 3- BUSCAR O USÁRIO PELO SEU ID
+    // BUSCAR O USÁRIO PELO SEU ID
     findUsersById: function (id) {
 
         let allUsers = this.getUsers();
@@ -45,7 +45,7 @@ const User = {
         return userFound;
     },
 
-    // 4- BUSCAR O USUÁRIO POR QUALQUER CAMPO
+    // BUSCAR O USUÁRIO POR QUALQUER CAMPO
     findUsersByField: function (field, value) {
 
         let allUsers = this.getUsers();
