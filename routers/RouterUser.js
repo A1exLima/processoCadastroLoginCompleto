@@ -57,6 +57,8 @@ const validations = [
 //---------------------------------------------------------
 const ControllerUser = require('../controllers/ControllerUser');
 
+//---------------------------- 
+
 router.get("/", ControllerUser.home);
 
 //----------------------------

@@ -7,7 +7,7 @@ module.exports = {
     
     home: (req, res) => {
 
-        res.render('home.ejs', {optionsMenu: req.session.optionsMenu });
+        res.render('home.ejs');
 
     },
 
