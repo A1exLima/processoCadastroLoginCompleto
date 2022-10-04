@@ -43,12 +43,8 @@ header{
 
 .menu div:nth-child(2){
   display: flex;
-  justify-content: end;
-  width: 550px;
-}
-
-.menu div:nth-child(2) li:nth-child(1){
-  margin-right: 40px;
+  justify-content: space-between;
+  width: 370px;
 }
 
 .menu a{

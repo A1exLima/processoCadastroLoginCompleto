@@ -5,8 +5,10 @@ const path = require("path");
 
 module.exports = {
     
-    home: (req, res) => { 
-        res.render('home.ejs');
+    home: (req, res) => {
+
+        res.render('home.ejs', {optionsMenu: req.session.optionsMenu });
+
     },
 
     registration: (req, res) =>{
@@ -69,10 +71,14 @@ module.exports = {
 
             if(passwordVerification){
 
-                //Caminho da imagem do usuário salvo
-                let pathImgUser = path.join("images","imageUser", userToLogin.avatar);
+                //Por seguranca retiramos a variavel senha antes de salvar na sessions
+                delete userToLogin.password;
 
-                res.render("profile.ejs", { imgUser: pathImgUser, nameUser: userToLogin.name});
+                //Sessions( Salva informacoes do usuário do lado do servidor)
+                req.session.userLogged = userToLogin;
+
+                //Redireciona para pagina de usuário logado (profile)
+                res.redirect("/profile");
 
             } else{
 
@@ -80,6 +86,25 @@ module.exports = {
 
             } 
         }   
+    },
+
+    profile: (req, res) =>{
+
+        //Destruturacao da sessions que contem informacoes do usuário logado
+        let {avatar, name} = req.session.userLogged;
+
+        //Caminho da imagem do usuário salvo
+        let pathImgUser = path.join("images","imageUser", avatar);
+
+        res.render("profile.ejs", {imgUser: pathImgUser, nameUser: name});
+        
+    },
+
+    logout: (req, res) => {
+
+        req.session.destroy();
+
+        res.redirect("/");
     }
 }
 

@@ -12,5 +12,12 @@
   "email": "antonia@me.com",
   "password": "$2b$10$476UHHLHSHJMbBkr/DTM8O/K.Ais5c/xj1GZIBH.sKhBk5IC9V1Wq",
   "avatar": "imageUser_1664897401476.png"
+ },
+ {
+  "id": 3,
+  "name": "Maria Fernandes",
+  "email": "maria@me.com",
+  "password": "$2b$10$KqeyC7IyniZHFdyqyABE5un1Kk9GAWQEJFSDDbG8.BjC1.TqxY.wm",
+  "avatar": "imageUser_1664907835166.png"
  }
 ]

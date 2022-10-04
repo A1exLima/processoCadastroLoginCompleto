@@ -3,6 +3,14 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 
+//---------------------------------------------------------
+//MIDDLEWARES
+
+//middleware para bloquear rotas caso o usuário esteja logado
+const loggedUsed = require("..//middlewares/loggedUsed");
+//middleware para bloquear rotas caso o usuário NAO esteja logado
+const logoutUsed = require("..//middlewares/logoutUsed");
+//
 const multerDiskStorage = require('..//middlewares/multerDiskStorage');
 const upload = multer({storage: multerDiskStorage});
 
@@ -53,15 +61,19 @@ router.get("/", ControllerUser.home);
 
 //----------------------------
 
-router.get('/registration', ControllerUser.registration);
+router.get('/registration', loggedUsed, ControllerUser.registration);
 
 router.post('/registration', upload.single('imageUser') , validations , ControllerUser.processRegistration);
 
 //----------------------------
 
-router.get('/login', ControllerUser.login);
+router.get('/login', loggedUsed, ControllerUser.login);
 
 router.post('/login', ControllerUser.processlogin);
 //---------------------------------------------------------
+
+router.get('/profile', logoutUsed, ControllerUser.profile);
+
+router.get('/logout', logoutUsed, ControllerUser.logout);
 
 module.exports = router;

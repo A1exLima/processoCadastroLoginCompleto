@@ -1,10 +1,26 @@
 const express = require('express');
 const app = express();
 
+//---------------------------------------------------------
+
+const session = require('express-session');
+
+// Configurando como Middleware o modulo session
+app.use(session({
+    secret:"RegisterAndLogin, this is the secret key",
+    resave: false,
+    saveUninitialized: false
+})); 
+
+//---------------------------------------------------------
 
 const path = require('path');
 
+//---------------------------------------------------------
+
 app.set("view engine", 'ejs');
+
+//---------------------------------------------------------
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
