@@ -7,7 +7,7 @@
                     <h1>LOGIN DE USUÁRIO</h1>
 
                     <!-- Warning: Atributo Enctype para processamento de arquivo-->
-                    <form action="/login" method="post" enctype="multipart/form-data">
+                    <form action="/login" method="post">
 
                         <label for="email">E-mail:</label>
                         <input type="text" name="email" id="email" value="<%=locals.old ? old.email : null %>">

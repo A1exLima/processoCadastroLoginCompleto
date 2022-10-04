@@ -24,10 +24,10 @@ module.exports = {
 
         } else{
 
-            //Verificacao do email se ja existe no banco de dados se sim, bloqueia o registro e informa ao usuário que ja foi registrado o email e pede para inserir um email diferente.
-            let UserExists = User.findUsersByField('email', req.body.email);
+            //Verificacao do email se ja existe no banco de dados. Se sim, bloqueia o registro e informa ao usuário que ja foi registrado e pede para inserir um email diferente.
+            let UserEmailExists = User.findUsersByField('email', req.body.email);
 
-            if(UserExists){
+            if(UserEmailExists){
                 return res.render('userRegister.ejs', { erros: {email: {msg: "Esse e-mail já está registrado, insira um novo e-mail"}}, old: req.body});
 
             }
@@ -42,10 +42,7 @@ module.exports = {
             //Funcao Model para Salvar usuário no banco de dados
             User.create(UserToCreate);
             
-            //Caminho da imagem do usuário salvo
-            let pathImgUser = path.join("images","imageUser", req.file.filename);
-
-            res.render("confRegister.ejs", { imgUser: pathImgUser});
+            return res.redirect('/login');
         }    
     },
 
@@ -54,6 +51,35 @@ module.exports = {
     },
 
     processlogin: (req, res) => {
-        res.send('FORM LOGIN')
+
+        // Busca os dados do req.body método post e destruta em variaveis
+        let {email, password} = req.body;
+
+        // Localiza o usuário pelo email se encontrar traz do banco de dados JSON todas as informacoes do usuário encontrado, c aso nao encontre retorna Undefined
+        let userToLogin = User.findUsersByField('email', email);
+
+        //Verifica se a variavel possui dados se NAO indica que o email nao foi encontrado e informa para digitar um email valido. Se sim faz a segunda etapa de verificacao que é confirmar se a senha digitada esta correta, se sim confirma que o usuario está logado rederizando a página de confirmacao, se nao, informa que a senha esta incorreta e solicita que o mesmo digite uma senha válida
+        if(!userToLogin){
+
+            return res.render('login.ejs', { erros: {email: {msg: "E-mail não registrado, insira um e-mail válido"}}, old: req.body});
+
+        } else{
+            
+            let passwordVerification = bcrypt.compareSync(password, userToLogin.password);
+
+            if(passwordVerification){
+
+                //Caminho da imagem do usuário salvo
+                let pathImgUser = path.join("images","imageUser", userToLogin.avatar);
+
+                res.render("profile.ejs", { imgUser: pathImgUser, nameUser: userToLogin.name});
+
+            } else{
+
+                return res.render('login.ejs', { erros: {password: {msg: "Senha incorreta, digite uma senha válida"}}, old: req.body});
+
+            } 
+        }   
     }
 }
+

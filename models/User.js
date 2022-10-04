@@ -11,10 +11,11 @@ const User = {
         return JSON.parse(fs.readFileSync(fileName, "utf-8"));
     },
 
+    // GERADOR DE ID DE USÚARIO
     generateId: function(){
         let allUsers = this.getUsers();
         let lastUser = allUsers.pop();
-        
+
         return lastUser ? lastUser.id + 1 : 1;  
     },
 
@@ -37,7 +38,7 @@ const User = {
         fs.writeFileSync(fileName, JSON.stringify(allUsers, null," "));
         return newUser;
     },
-    // BUSCAR O USÁRIO PELO SEU ID
+    // BUSCAR O USUÁRIO PELO SEU ID
     findUsersById: function (id) {
 
         let allUsers = this.getUsers();
