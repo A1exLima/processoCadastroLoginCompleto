@@ -5,5 +5,12 @@
   "email": "asda@me.com",
   "password": "$2b$10$/sLZKvbwAgfrfpOPogxX0eYfLHBCH/Mf9S8c..trRXm9JP0SNXqP6",
   "avatar": "imageUser_1664985644731.png"
+ },
+ {
+  "id": 2,
+  "name": "Maria Fernandes",
+  "email": "maria@me.com",
+  "password": "$2b$10$gQinG.c3Y9WQiHV0HrQelusejFCt27u.blOHTmdCOcOYmCu7vqWgG",
+  "avatar": "imageUser_1664988481844.jpg"
  }
 ]

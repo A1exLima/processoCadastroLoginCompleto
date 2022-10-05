@@ -6,16 +6,13 @@ function loggedUserData (req, res, next){
 
         res.locals.isLogged = true;
         
-        let usedlogged = req.session.userLogged;
+        usedlogged = req.session.userLogged;
 
         const path = require("path");
-
-        //Caminho da imagem do usuário salvo
-        let pathImgUser = path.join("images","imageUser", usedlogged.avatar);
+        pathImgUser = path.join("images","imageUser", usedlogged.avatar);
 
         res.locals.pathImgUser = pathImgUser;
     }
-    
 
     next();
 }
