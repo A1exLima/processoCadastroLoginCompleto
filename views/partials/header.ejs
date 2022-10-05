@@ -4,18 +4,29 @@
 
                 <header>
 
-                    <nav class="menu">
+                    <ul class="menu">
+                        
                         <div>
                             <li> SISTEMA DE CADASTRO DE USUÁRIOS</li>
                             <li><a href="/">Home</a></li>
                         </div>
-                        <div>
-                            <li><a href="/registration">Cadastrar usúario</a></li>
-                            <li><a href="/login">Login</a></li>
-                            <li><a href="/profile">Perfil</a></li>
-                            <li><a href="logout">Sair</a></li>
+
+                        <div class="options">
+                            
+                            <% if (locals.isLogged) { %>
+
+                                <li><a href="/profile">Perfil</a></li>
+                                <li><a href="logout">Sair</a></li>
+
+                            <% } else {%>
+                                
+                                <li><a href="/registration">Cadastrar usúario</a></li>
+                                <li><a href="/login">Login</a></li>
+
+                            <% } %> 
+
                         </div>
-                    </nav>
+                    </ul>
 
                 </header>
                 

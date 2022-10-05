@@ -14,6 +14,11 @@ app.use(session({
 
 //---------------------------------------------------------
 
+// Middleware para verificar se usuário esta logado ou nao e assim alterar as opcoes de menu
+const loggedUserData = require('./middlewares/loggedUserData');
+
+//---------------------------------------------------------
+
 const path = require('path');
 
 //---------------------------------------------------------
@@ -27,9 +32,12 @@ app.use(express.urlencoded({extended:false}));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(loggedUserData);
+
 //---------------------------------------------------------
 
 const RouterUser = require('./routers/RouterUser');
+
 app.use('/', RouterUser);
 
 //---------------------------------------------------------

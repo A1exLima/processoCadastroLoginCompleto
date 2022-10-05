@@ -28,6 +28,7 @@ header{
   display: flex;
   justify-content: space-between;
   width: 1220px;
+  list-style-type: none;
 
 }
 
@@ -41,10 +42,14 @@ header{
   margin-right: 40px;
 }
 
-.menu div:nth-child(2){
+.options{
   display: flex;
-  justify-content: space-between;
-  width: 370px;
+  justify-content: end;
+  width: 310px;
+}
+
+.options li:nth-child(1){
+  margin-right: 40px;
 }
 
 .menu a{
@@ -58,9 +63,6 @@ header{
   border-bottom: 2.5px solid rgba(255, 255, 255, 0.324);
   border-top-right-radius: 10px;
 }
-
-
-
 
 article {
     display: flex;
