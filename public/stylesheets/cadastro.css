@@ -35,6 +35,7 @@ header{
 .menu div:nth-child(1){
   display: flex;
   justify-content: start;
+  align-items: center;
   width: 550px;
 }
 
@@ -44,8 +45,17 @@ header{
 
 .options{
   display: flex;
+  align-items: center;
   justify-content: end;
   width: 310px;
+}
+
+.options img{
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  border-radius: 100px;
+  max-width: 50px;
+  margin-top: 5px;
+  margin-left: 40px;
 }
 
 .options li:nth-child(1){

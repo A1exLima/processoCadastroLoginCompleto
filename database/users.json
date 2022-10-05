@@ -2,22 +2,8 @@
  {
   "id": 1,
   "name": "Alex da Silva Lima",
-  "email": "alex.lima_ceo@outlook.com",
-  "password": "$2b$10$1/u3.UZThPLgVNciibI8see5fuMThkyNDxxjWhHtN7x9PQM6nQbDm",
-  "avatar": "imageUser_1664897287584.png"
- },
- {
-  "id": 2,
-  "name": "Antonia Maria da Silva",
-  "email": "antonia@me.com",
-  "password": "$2b$10$476UHHLHSHJMbBkr/DTM8O/K.Ais5c/xj1GZIBH.sKhBk5IC9V1Wq",
-  "avatar": "imageUser_1664897401476.png"
- },
- {
-  "id": 3,
-  "name": "Maria Fernandes",
-  "email": "maria@me.com",
-  "password": "$2b$10$KqeyC7IyniZHFdyqyABE5un1Kk9GAWQEJFSDDbG8.BjC1.TqxY.wm",
-  "avatar": "imageUser_1664907835166.png"
+  "email": "asda@me.com",
+  "password": "$2b$10$/sLZKvbwAgfrfpOPogxX0eYfLHBCH/Mf9S8c..trRXm9JP0SNXqP6",
+  "avatar": "imageUser_1664985644731.png"
  }
 ]

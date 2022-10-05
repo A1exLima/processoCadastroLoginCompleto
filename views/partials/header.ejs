@@ -14,9 +14,10 @@
                         <div class="options">
                             
                             <% if (locals.isLogged) { %>
-
+                                
                                 <li><a href="/profile">Perfil</a></li>
                                 <li><a href="logout">Sair</a></li>
+                                <li><img src="<%=locals.pathImgUser%>" alt=" User Profile Img"></li>
 
                             <% } else {%>
                                 

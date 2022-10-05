@@ -1,3 +1,5 @@
+const path = require('path');
+//---------------------------------------------------------
 const express = require('express');
 const app = express();
 
@@ -16,10 +18,6 @@ app.use(session({
 
 // Middleware para verificar se usuário esta logado ou nao e assim alterar as opcoes de menu
 const loggedUserData = require('./middlewares/loggedUserData');
-
-//---------------------------------------------------------
-
-const path = require('path');
 
 //---------------------------------------------------------
 
