@@ -13,7 +13,9 @@ module.exports = {
 
     registration: (req, res) =>{
 
-        res.render('userRegister.ejs');
+        
+        return res.render('userRegister.ejs');
+
     },
 
     processRegistration: (req, res) =>{
@@ -49,13 +51,14 @@ module.exports = {
     },
 
     login: (req, res) => {
+        
         res.render('login.ejs');
     },
 
     processlogin: (req, res) => {
 
         // Busca os dados do req.body método post e destruta em variaveis
-        let {email, password} = req.body;
+        let {email, password, remember} = req.body;
 
         // Localiza o usuário pelo email se encontrar traz do banco de dados JSON todas as informacoes do usuário encontrado, c aso nao encontre retorna Undefined
         let userToLogin = User.findUsersByField('email', email);
@@ -77,6 +80,12 @@ module.exports = {
                 //Sessions( Salva informacoes do usuário do lado do servidor)
                 req.session.userLogged = userToLogin;
 
+                //Verifica se opcao lembrar usuario esta selecionada na view login e se sim cria um cookie com as informacoes de usuário
+                if(remember){
+                    //Cookie ( Salva informacoes do usuário do lado do cliente (front-end))
+                    res.cookie('infUsedLoggedEmail', userToLogin.email, {maxAge: (1000 * 60)* 1});
+                }
+                
                 //Redireciona para pagina de usuário logado (profile)
                 res.redirect("/profile");
 
@@ -102,6 +111,7 @@ module.exports = {
 
     logout: (req, res) => {
 
+        res.clearCookie('infUsedLoggedEmail');
         req.session.destroy();
 
         res.redirect("/");

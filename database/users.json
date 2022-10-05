@@ -5,5 +5,12 @@
   "email": "maria@me.com",
   "password": "$2b$10$/vvs2BpEdAHD1yAcqA6ApufI0Ddk.00GoV6Xm5jAvxAnrrPPfAQsu",
   "avatar": "imageUser_1664990331505.png"
+ },
+ {
+  "id": 2,
+  "name": "Alex da Silva Lima",
+  "email": "alex.lima_ceo@outlook.com",
+  "password": "$2b$10$Wbb4Dpqs4XcG4o4BPe214eE/iXUY5MtlEdTCteW2sW3XpSwyP4INS",
+  "avatar": "imageUser_1664990627745.jpg"
  }
 ]

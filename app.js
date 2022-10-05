@@ -4,6 +4,11 @@ const express = require('express');
 const app = express();
 
 //---------------------------------------------------------
+const cookies = require('cookie-parser');
+
+app.use(cookies());
+
+//---------------------------------------------------------
 
 const session = require('express-session');
 
