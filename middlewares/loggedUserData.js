@@ -19,8 +19,6 @@ function loggedUserData (req, res, next){
 
         //passa as informacoes encontradas no banco de dados para o lado do servidor
         req.session.userLogged = userFromCookie;
-
-        console.log(req.session.userLogged);
     }
 
     if(req.session.userLogged){
